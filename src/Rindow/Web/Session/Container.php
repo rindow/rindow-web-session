@@ -38,11 +38,12 @@ class Container implements Iterator,Countable,ArrayAccess
             return;
         $this->connected = true;
         $old = $this->session->get($this->name);
-        if($old!==null) {
+        if($old) {
             $this->dict = $old;
         } else {
             $this->dict = new Dict();
         }
+
         $this->session->set($this->name,$this->dict);
     }
 
